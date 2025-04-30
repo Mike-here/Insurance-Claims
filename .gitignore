@@ -1,0 +1,9 @@
+# Ignore data outputs and temp files
+data/*.xlsx
+data/*.db
+data/*.csv
+data/*.json
+*.pyc
+__pycache__/
+.DS_Store
+*.log
