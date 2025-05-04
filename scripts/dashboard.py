@@ -98,13 +98,29 @@ def main():
 
     # --- Prepare Billing Summary ---
     billing_summary = pd.DataFrame(summary_rows)
-    if not billing_summary.empty:
+    # Defensive checks for missing columns
+    required_columns = ["Assigned Doctor", "Patient Name", "Insurance Provider"]
+    missing_columns = [col for col in required_columns if col not in billing_summary.columns]
+
+    if not billing_summary.empty and not missing_columns:
         billing_summary["Assigned Doctor"] = billing_summary["Assigned Doctor"].fillna("").astype(str)
         billing_summary["Patient Name"] = billing_summary["Patient Name"].fillna("").astype(str)
         billing_summary["Insurance Provider"] = billing_summary["Insurance Provider"].fillna("").astype(str)
-    doctor_filter = st.sidebar.selectbox("Filter by Doctor", options=["All"] + sorted(billing_summary["Assigned Doctor"].unique()))
-    patient_filter = st.sidebar.selectbox("Filter by Patient", options=["All"] + sorted(billing_summary["Patient Name"].unique()))
-    insurance_filter = st.sidebar.selectbox("Filter by Insurance Provider", options=["All"] + sorted(billing_summary["Insurance Provider"].unique()))
+        doctor_options = ["All"] + sorted(billing_summary["Assigned Doctor"].unique())
+        patient_options = ["All"] + sorted(billing_summary["Patient Name"].unique())
+        insurance_options = ["All"] + sorted(billing_summary["Insurance Provider"].unique())
+    else:
+        if billing_summary.empty:
+            st.warning("No billing summary data available.")
+        if missing_columns:
+            st.warning(f"Missing columns in billing summary: {', '.join(missing_columns)}. Some filters may be unavailable.")
+        doctor_options = ["All"]
+        patient_options = ["All"]
+        insurance_options = ["All"]
+
+    doctor_filter = st.sidebar.selectbox("Filter by Doctor", options=doctor_options)
+    patient_filter = st.sidebar.selectbox("Filter by Patient", options=patient_options)
+    insurance_filter = st.sidebar.selectbox("Filter by Insurance Provider", options=insurance_options)
 
     filtered_summary = billing_summary.copy()
     if doctor_filter != "All":
