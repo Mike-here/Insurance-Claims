@@ -1,0 +1,46 @@
+[
+  {
+    "Patient Name":"Doe, Jane Billed",
+    "Patient ID":"123456789",
+    "CPT Code":"96372",
+    "Units":"1",
+    "Service Date":"01\/25\/2022 to 01\/25\/2022",
+    "Amount Billed":"35.00",
+    "Amount Paid":"17.87",
+    "Patient Responsibility":"0.00",
+    "Denial Code":"PR1"
+  },
+  {
+    "Patient Name":"Doe, Jane Billed",
+    "Patient ID":"123456789",
+    "CPT Code":"99214,25",
+    "Units":"1",
+    "Service Date":"01\/25\/2022 to 01\/25\/2022",
+    "Amount Billed":"153.00",
+    "Amount Paid":"78.89",
+    "Patient Responsibility":"0.00",
+    "Denial Code":"PR1"
+  },
+  {
+    "Patient Name":"Doe, Jane Billed",
+    "Patient ID":"123456789",
+    "CPT Code":"J0696",
+    "Units":"2",
+    "Service Date":"01\/25\/2022 to 01\/25\/2022",
+    "Amount Billed":"55.00",
+    "Amount Paid":"1.00",
+    "Patient Responsibility":"0.00",
+    "Denial Code":"PR1"
+  },
+  {
+    "Patient Name":"Doe, Jane Billed",
+    "Patient ID":"123456789",
+    "CPT Code":"J1100",
+    "Units":"1",
+    "Service Date":"01\/25\/2022 to 01\/25\/2022",
+    "Amount Billed":"20.00",
+    "Amount Paid":"0.12",
+    "Patient Responsibility":"0.00",
+    "Denial Code":"PR1"
+  }
+]

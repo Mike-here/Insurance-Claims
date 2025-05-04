@@ -1,0 +1,5 @@
+Patient Name,Patient ID,CPT Code,Units,Service Date,Amount Billed,Amount Paid,Patient Responsibility,Denial Code
+"Doe, Jane Billed",123456789,96372,1,01/25/2022 to 01/25/2022,35.00,17.87,0.00,PR1
+"Doe, Jane Billed",123456789,"99214,25",1,01/25/2022 to 01/25/2022,153.00,78.89,0.00,PR1
+"Doe, Jane Billed",123456789,J0696,2,01/25/2022 to 01/25/2022,55.00,1.00,0.00,PR1
+"Doe, Jane Billed",123456789,J1100,1,01/25/2022 to 01/25/2022,20.00,0.12,0.00,PR1

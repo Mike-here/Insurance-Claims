@@ -1,0 +1,4 @@
+Patient Name,Patient ID,Disease,ICD Code,Assigned Doctor,Doctor Charge,Blue Cross Blue Shield Rate,Patient Owes,UHC Rate,Medicare Rate
+Kev Oppong,2f83ba216c,BLEPHARITIS,H01.009,Doctor Kelvin Nkansa,160.0,104.0,56.0,,
+Patrick Asamoah,6e787dcf4e,CHALAZION,H00.14,Doctor Lord Gyasi,300.0,,153.0,147.0,
+Boris,f744b86f23,DRY EYE,H04.123,Doctor Kelvin Nkansa,500.0,,350.0,,150.0

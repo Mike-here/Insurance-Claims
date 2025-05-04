@@ -1,9 +1,16 @@
-# Ignore data outputs and temp files
-data/*.xlsx
-data/*.db
-data/*.csv
-data/*.json
+# Python
 *.pyc
 __pycache__/
+
+# System files
 .DS_Store
 *.log
+
+# Temp files
+~$*
+
+# Keep these commented out to include data files in deployment
+# data/*.xlsx
+# data/*.db
+# data/*.csv
+# data/*.json
