@@ -13,14 +13,18 @@ def docx_table_to_df(docx_file=None):
     if docx_file is None:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         docx_file = os.path.abspath(os.path.join(script_dir, '..', 'data', 'insurance_rates', 'Medicaid_Insurance_Rates.docx'))
-    if isinstance(docx_file, str):
-        doc = Document(docx_file)
-    else:
-        doc = Document(docx_file)
-    table = doc.tables[0]
-    data = [[cell.text.strip() for cell in row.cells] for row in table.rows]
-    df = pd.DataFrame(data[1:], columns=data[0])
-    return df
+    try:
+        if isinstance(docx_file, str):
+            doc = Document(docx_file)
+        else:
+            doc = Document(docx_file)
+        table = doc.tables[0]
+        data = [[cell.text.strip() for cell in row.cells] for row in table.rows]
+        df = pd.DataFrame(data[1:], columns=data[0])
+        return df
+    except Exception as e:
+        print(f"Error loading DOCX file '{docx_file}': {e}")
+        return pd.DataFrame()  # Return empty DataFrame on error
 
 def csv_to_df(csv_file):
     return pd.read_csv(csv_file)
