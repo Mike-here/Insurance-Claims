@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-# import plotly.express as px
+import plotly.express as px
 
 def main():
     try:
