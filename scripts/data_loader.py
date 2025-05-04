@@ -8,8 +8,11 @@ from docx import Document
 import os
 import numpy as np
 
-def docx_table_to_df(docx_file):
-    # Accept file path or file-like object
+def docx_table_to_df(docx_file=None):
+    # Default to the correct path if not provided
+    if docx_file is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        docx_file = os.path.abspath(os.path.join(script_dir, '..', 'data', 'insurance_rates', 'Medicaid_Insurance_Rates.docx'))
     if isinstance(docx_file, str):
         doc = Document(docx_file)
     else:
